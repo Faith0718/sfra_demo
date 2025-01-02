@@ -5,12 +5,31 @@
         assets.addJs('/js/productDetail.js');
         assets.addJs('/js/productDetailCustom.js');
         assets.addCss('/css/product/detail.css');
+        assets.addCss('/css/productDetailCustom.css');
     </isscript>
 
     <isset name="product" value="${pdict.product}" scope="page" />
     <isset name="isQuickView" value="${false}" scope="page" />
     <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
     <isobject object="${product.raw}" view="detail" />
+        <div class="product-detail-header">
+            <div class="product-into-wrapper">
+                <div class="product-into-pdf">
+                    <button class="generate-pdf btn" name="${product.productName}">Generate PDF</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-info-name">${product.productName}</div>
+                    <div class="product-info-price">
+                        <span class="product-price-list">${product.price.list.formatted}</span>
+                        <span>${product.price.sales.formatted}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="add-btn-wrapper">
+                <isinclude template="product/components/addToCartProduct" />
+                <button class="select-styles-btn btn">Select Styles for Availability</button>
+            </div>
+        </div>
         <div class="container product-detail product-wrapper"
             data-pid="${product.id}">
             <div class="row">

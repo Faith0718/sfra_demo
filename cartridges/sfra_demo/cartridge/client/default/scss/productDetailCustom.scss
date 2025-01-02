@@ -1,0 +1,69 @@
+// 针对电脑端
+@media screen and (min-width: 769px) {
+    .product-detail-header {
+        width: 100%;
+        position: fixed;
+        display: none;
+        z-index: 100;
+        padding: 5px 15px;
+        background-color: #444;
+        color: white;
+        .add-btn-wrapper {
+            margin-left: auto;
+        }
+        .product-into-wrapper {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+        .generate-pdf {
+            background-color: #00a1e0;
+            color: white;
+            margin-right: 15px;
+        }
+        .product-info {
+            font-size: small;
+        }
+        .product-info-price {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-price-list {
+            margin-right: 15px;
+            text-decoration: line-through solid white;
+        }
+        .select-styles-btn {
+            background-color: #00a1e0;
+            color: white;
+        }
+        .add-to-cart {
+            display: none;
+        }
+    }
+}
+// 针对手机端
+@media screen and (max-width: 768px) {
+    .product-detail-header {
+        position: fixed;
+        bottom: 0 !important;
+        width: 100%;
+        z-index: 100;
+        display: none;
+        background-color: white;
+        .add-btn-wrapper {
+            width: 100%;
+        }
+        .product-into-wrapper {
+            display: none;
+        }
+        .add-to-cart {
+            width: 100% !important;
+            display: none;
+        }
+        .select-styles-btn {
+            background-color: #00a1e0;
+            color: white;
+            width: 100% !important;
+        }
+    }
+}
